@@ -115,17 +115,18 @@ class ComplexityAnalyzer(ast.NodeVisitor):
         complexity = 0
         
         for child in ast.iter_child_nodes(node):
-            if isinstance(child, (ast.If, ast.While, ast.For, ast.AsyncFor)):
+            if isinstance(child, (ast.If, ast.While, ast.For, ast.AsyncFor, ast.Try)):
                 complexity += 1 + depth
                 complexity += self._cognitive_complexity(child, depth + 1)
             elif isinstance(child, ast.BoolOp):
                 complexity += len(child.values) - 1
             elif isinstance(child, (ast.ExceptHandler,)):
-                complexity += 1 + depth
+                # The ExceptHandler itself also adds complexity
+                complexity += 1 + depth 
                 complexity += self._cognitive_complexity(child, depth + 1)
             else:
                 complexity += self._cognitive_complexity(child, depth)
-        
+                
         return complexity
     
     def _max_nesting_depth(self, node: ast.AST, current_depth: int = 0) -> int:
