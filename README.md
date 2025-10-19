@@ -116,11 +116,3 @@ flake8
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License - see LICENSE file for details.
-
-## Acknowledgments
-
-Inspired by various code complexity tools including McCabe, Radon, and SonarQube.
