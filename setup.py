@@ -6,8 +6,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="codecomplexity",
     version="0.1.1",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Ayaan Bandey",
+    author_email="ayaanniaz777@gmail.com",
     description="A simple code complexity analyzer for Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
